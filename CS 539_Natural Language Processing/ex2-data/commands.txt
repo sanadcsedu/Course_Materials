@@ -1,0 +1,42 @@
+Commands:
+Q2.
+cat test.txt | sed -e 's/ /_/g;s/\(.\)/\1 /g' | awk '{printf("<s> %s </s>\n", $0)}' | carmel -sribI uni.wfsa
+
+#Finding out the best smoothing parameter using hold out data [For Bigram]
+
+cat dev.txt | sed -e 's/ /_/g;s/\(.\)/\1 /g' | awk '{printf("<s> %s </s>\n", $0)}' | carmel -sribI bigram.wfsa 
+
+[1]
+Viterbi (best path) product of probs=e^-23001.8795582791, probability=2^-33184.7 per-input-symbol-perplexity(N=9664)=2^3.43385 per-line-perplexity(N=100)=2^331.847
+[.5]
+Viterbi (best path) product of probs=e^-22987.4974847362, probability=2^-33163.9 per-input-symbol-perplexity(N=9664)=2^3.4317 per-line-perplexity(N=100)=2^331.639
+[.25]
+Viterbi (best path) product of probs=e^-22984.2476712014, probability=2^-33159.3 per-input-symbol-perplexity(N=9664)=2^3.43121 per-line-perplexity(N=100)=2^331.593
+[.1]
+Viterbi (best path) product of probs=e^-22987.869880073, probability=2^-33164.5 per-input-symbol-perplexity(N=9664)=2^3.43176 per-line-perplexity(N=100)=2^331.645
+[.05]
+Viterbi (best path) product of probs=e^-22993.3571472689, probability=2^-33172.4 per-input-symbol-perplexity(N=9664)=2^3.43257 per-line-perplexity(N=100)=2^331.724
+
+#Finding out the best smoothing parameter using hold out data [For Trigram]
+
+cat dev.txt | sed -e 's/ /_/g;s/\(.\)/\1 /g' | awk '{printf("<s> %s </s>\n", $0)}' | carmel -sribI trigram.wfsa 
+
+[1]
+Viterbi (best path) product of probs=e^-19956.2956260251, probability=2^-28790.8 per-input-symbol-perplexity(N=9664)=2^2.97919 per-line-perplexity(N=100)=2^287.908
+[.5]
+Viterbi (best path) product of probs=e^-19649.3139151229, probability=2^-28348 per-input-symbol-perplexity(N=9664)=2^2.93336 per-line-perplexity(N=100)=2^283.48
+[.25]
+Viterbi (best path) product of probs=e^-19502.4817138067, probability=2^-28136.1 per-input-symbol-perplexity(N=9664)=2^2.91144 per-line-perplexity(N=100)=2^281.361
+[.1]
+Viterbi (best path) product of probs=e^-19461.2993864475, probability=2^-28076.7 per-input-symbol-perplexity(N=9664)=2^2.90529 per-line-perplexity(N=100)=2^280.767
+[.01]
+Viterbi (best path) product of probs=e^-19688.3108333183, probability=2^-28404.2 per-input-symbol-perplexity(N=9664)=2^2.93918 per-line-perplexity(N=100)=2^284.042
+
+
+
+Running the following command on nospaces and retrieve spaces.
+
+cat test.txt.nospaces | sed -e 's/\(.\)/\1 /g' | awk '{printf("<s> %s </s>\n", $0)}' | carmel -sribIEWk 1 bigram_smoothing.wfsa remove-spaces.fst 
+
+
+cat test.txt.novowels | sed -e 's/ /_/g;s/\(.\)/\1 /g' | awk '{printf("<s> %s </s>\n", $0)}' | carmel -sribIEWk 1 bigram_sausage.wfst > test.txt.vowel_restored.bi
