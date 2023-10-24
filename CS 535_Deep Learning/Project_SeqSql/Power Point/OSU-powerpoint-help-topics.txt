@@ -1,0 +1,7 @@
+Oregon State University Powerpoint Presentations are provided in 16:9 (widescreen) format for best viewing on most current day screens. 
+Files with "4x3" in their name are intended for 4:3 (fullscreen) format, which was the common screen size before 2010. This size is best for viewing on older screens.
+It is preferred that Oregon State Powerpoint presentations use the OSU Brand fonts. For more details on OSU font usage, visit http://communications.oregonstate.edu/brand-guide/visual-identity/typography
+
+NOTE: Brand fonts must be installed on the computer in which the presentation is given, or they will default to non-brand alternative fonts. In cases where it is not guaranteed that the brand fonts will be installed on the presentation computer, it is advised that files with "system fonts" in the name be used as these use approved font alternatives that are available on all computers.
+
+Tips and tutorials are available at http://blogs.oregonstate.edu/marketing/ including details on Powerpoint presentations. For specific questions, contact university.marketing@oregonstate.edu
